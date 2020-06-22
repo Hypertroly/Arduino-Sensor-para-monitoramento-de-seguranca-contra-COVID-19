@@ -1,0 +1,33 @@
+#include <Sim800l.h>
+#include <SoftwareSerial.h>
+
+Sim800l Sim800l; //Cria o atuador(o qual envia a mensagem)
+
+char* text = "Sensor acionado!"; //Texto enviado na mensagem
+char* smsNum = "011972181601"; //Número que receberá a mensagem
+#define pino_sensor A1
+int ativ;
+
+void setup()
+{
+  Serial.begin(9600); //inicializa o serial
+  pinMode(pino_sensor, INPUT);
+  Sim800l.begin(); //inicializa a biblioteca
+  Serial.println("Aguardando acionamento do sensor...");
+}
+
+void loop()
+{
+  ativ = digitalRead(pino_sensor); //le a entrada do sensor
+  if (ativ != 0) //se estiver ativo
+  {
+    Serial.println("Sensor acionado! Enviando SMS...");
+    Sim800l.sendSms(smsNum, text); //envia o SMS para o número escolhido
+    Serial.println("SMS Enviado...");
+    while (digitalRead(pino_sensor) != 0)
+    {
+      delay(200); //faz uma pausa de 200 milisegundos
+    }
+    //retorna para o inicio do loop até uma ativação do sensor
+  }
+}
