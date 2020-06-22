@@ -1,0 +1,17 @@
+Materiais Base
+
+  1 Cabo USB – Cabo para a conexão com o arduino.
+  1 Arduino Uno – Arduino responsável pelo funcionamento do sensor e do envio da
+  mensagem.
+  1 Fonte ajustável protoboard – Usada para fazer o encaixe e a ligação entre os
+  componentes e para energiza-los.
+  1 Fonte de alimentação - Para fornecer a energia necessária no funcionamento.
+  1 Módulo GSM GPRS SIM800L com antena SMA.
+  1 Chip para celular.
+  1 Resistor de 440 ohms.
+  8 Cabos.
+  
+Materiais - Sensores
+
+   1 Sensor magnético Reed Switch – Sensor óptico para o monitoramento, deve ser
+  colocado em um local onde a pessoa deve passar para sair de casa. 
